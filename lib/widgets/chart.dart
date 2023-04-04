@@ -1,5 +1,3 @@
-import 'dart:js_util';
-
 import 'package:intl/intl.dart';
 
 import '../models/transaction.dart';
@@ -24,7 +22,8 @@ class Chart extends StatelessWidget {
           totalSum += recentTransactions[i].amount;
         }
       }
-      print(DateFormat.E(weekDay));
+      print(DateFormat.E().format(weekDay));
+      print("totalSum");
       print(totalSum);
       return {
         "day": DateFormat.E(weekDay),
@@ -35,6 +34,8 @@ class Chart extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    print("groupedTransactionValues");
+    print(groupedTransactionValues);
     return Card(
       elevation: 6,
       margin: EdgeInsets.all(20),
