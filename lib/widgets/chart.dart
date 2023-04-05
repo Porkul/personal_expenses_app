@@ -28,7 +28,7 @@ class Chart extends StatelessWidget {
         'day': DateFormat.E().format(weekDay).substring(0, 1),
         'amount': totalSum,
       };
-    });
+    }).reversed.toList();
   }
 
   double get totalSpending {
@@ -40,8 +40,9 @@ class Chart extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Card(
-      elevation: 6,
+      elevation: 4,
       margin: EdgeInsets.all(20),
+      // if Container only uses padding, then petter replace it with Padding widget
       child: Padding(
         padding: EdgeInsets.all(10),
         child: Row(
